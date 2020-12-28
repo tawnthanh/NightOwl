@@ -1,40 +1,35 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('PostContents', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      postId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
+        references: { model: 'Posts' }
       },
-      username: {
-        type: Sequelize.STRING(50),
+      fieldName: {
         allowNull: false,
-        unique: true,
-      },
-      email: {
-        type: Sequelize.STRING(255),
-        allowNull: false,
-        unique: true,
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
-        allowNull: false,
+        type: Sequelize.ENUM('photo', 'video', 'text', 'audio')
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
-  },
+    return queryInterface.dropTable('PostContents');
+  }
 };
