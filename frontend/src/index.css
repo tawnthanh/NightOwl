@@ -1,6 +1,6 @@
 /* TODO Add site wide styles */
 body{
-  background-color: gray;
+  background-color: black;
   background-image: url("img/glowing-owl.PNG");
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,6 +8,6 @@ body{
   justify-content: center;
 }
 
-#root {
+/* #root {
   margin-top: 250px;
-}
+} */

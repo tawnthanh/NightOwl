@@ -2,3 +2,12 @@
   position: absolute;
 }
 
+.navbar {
+  display: flex;
+  border: 1px solid white;
+}
+
+.navbar div {
+  box-sizing: border-box;
+  padding: 5px;
+}
