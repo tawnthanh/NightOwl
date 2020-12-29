@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 // import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -14,20 +15,20 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <div className="title"><h1>NIGHT OWL</h1></div>
+    <div className="home-container">
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
           <Route path="/register">
             <SignupFormPage />
           </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
         </Switch>
       )}
-    </>
+      <div className="title"><h1>NIGHT OWL</h1></div>
+    </div>
   );
 }
 
