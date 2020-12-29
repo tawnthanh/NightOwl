@@ -20,10 +20,24 @@
 
 #modal-content {
   position: absolute;
-  background-color:white;
+  background-color:black;
+  border: 1px solid white;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
-#modal-content > h1 {
-  color: green;
+#modal-content > h2 {
+  color: white;
   text-align: center;
+  font-family: 'Inconsolata', monospace;
+  margin: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-error{
+  color: red;
 }

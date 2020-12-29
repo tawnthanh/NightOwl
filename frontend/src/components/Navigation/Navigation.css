@@ -1,13 +1,22 @@
 .profile-dropdown {
-  position: absolute;
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 
 .navbar {
   display: flex;
   border: 1px solid white;
+  font-family: 'Inconsolata', monospace;
 }
 
 .navbar div {
   box-sizing: border-box;
   padding: 5px;
+}
+
+.nav, a{
+  text-decoration: none;
+  color: white;
 }

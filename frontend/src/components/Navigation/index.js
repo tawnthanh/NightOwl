@@ -20,7 +20,7 @@ function Navigation({ isLoaded }){
           <LoginFormModal />
         </div>
         <div>
-          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink className="nav" to="/register">Register</NavLink>
         </div>
       </>
     );
@@ -29,7 +29,7 @@ function Navigation({ isLoaded }){
   return (
     <div className="navbar">
       <div>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink className="nav" exact to="/">Home</NavLink>
       </div>
       {isLoaded && sessionLinks}
       </div>

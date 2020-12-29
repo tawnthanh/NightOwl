@@ -5,9 +5,13 @@ import LoginForm from './LoginForm';
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
 
+  const loginButton = (e) => {
+    e.preventDefault();
+    setShowModal(true)
+  }
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
+      <a href="/" onClick={loginButton}>Login</a>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />
