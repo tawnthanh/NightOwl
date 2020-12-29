@@ -6,12 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING
   }, {});
   Post.associate = function(models) {
-    Post.hasMany(models.PostType, { foreignKey: 'postTypeId' });
-    Post.hasMany(models.User, { foreignKey: 'userId' });
+    Post.belongsTo(models.PostType, { foreignKey: 'postTypeId' });
+    Post.belongsTo(models.User, { foreignKey: 'userId' });
 
-    Post.belongsTo(models.PostContent, { foreignKey: 'postId' });
-    Post.belongsTo(models.Review, { foreignKey: 'postId' });
-    Post.belongsTo(models.Like, { foreignKey: 'postId' });
+    Post.hasMany(models.PostContent, { foreignKey: 'postId' });
+    Post.hasMany(models.Review, { foreignKey: 'postId' });
+    Post.hasMany(models.Like, { foreignKey: 'postId' });
   };
   return Post;
 };

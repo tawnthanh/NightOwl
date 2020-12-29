@@ -5,11 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   PostType.associate = function (models) {
     // associations can be defined here
-    PostType.belongsToMany(models.PostContent, {
-      through: 'Posts',
-      foreignKey: 'postTypeId',
-      otherKey: ''
-    })
+    PostType.belongsTo(models.PostContent, { foreignKey: 'postId'})
   };
   return PostType;
 };

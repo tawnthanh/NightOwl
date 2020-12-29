@@ -1,1 +1,13 @@
 /* TODO Add site wide styles */
+body{
+  background-color: gray;
+  background-image: url("img/glowing-owl.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  margin-top: 250px;
+}

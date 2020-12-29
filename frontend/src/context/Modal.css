@@ -22,3 +22,8 @@
   position: absolute;
   background-color:white;
 }
+
+#modal-content > h1 {
+  color: green;
+  text-align: center;
+}
