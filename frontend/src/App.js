@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+      <div className="title"><h1>NIGHT OWL</h1></div>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

@@ -8,7 +8,9 @@
 .navbar {
   display: flex;
   border: 1px solid white;
+  border-radius: 4px;
   font-family: 'Inconsolata', monospace;
+  justify-content: center;
 }
 
 .navbar div {
@@ -19,4 +21,9 @@
 .nav, a{
   text-decoration: none;
   color: white;
+}
+
+.nav:hover, a:hover {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 1);
+  color: red;
 }

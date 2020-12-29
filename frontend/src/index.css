@@ -3,11 +3,16 @@ body{
   background-color: black;
   background-image: url("img/owl2.PNG");
   background-repeat: no-repeat;
+  /* background-position: center; */
   background-size: cover;
   display: flex;
   justify-content: center;
 }
 
-/* #root {
-  margin-top: 250px;
-} */
+.title {
+  position: absolute;
+  color: white;
+  font-family: roboto;
+  margin: 460px 0 0 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}

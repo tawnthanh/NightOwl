@@ -1,5 +1,6 @@
 .register{
   border: 1px solid white;
+  border-radius: 4px;
   background-color: rgba(128, 128, 128,0.8);
   color: black;
   display: flex;
@@ -15,4 +16,9 @@ h2 {
 
 .register > form {
   margin: 0;
+}
+
+button {
+  font-family: 'Inconsolata', monospace;
+
 }
