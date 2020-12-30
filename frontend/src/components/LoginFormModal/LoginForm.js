@@ -10,16 +10,16 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const history = useHistory();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
     dispatch(sessionActions.login({ credential, password })).catch(
       (res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
+        else history.push("/dashboard");
       }
     );
-    history.push("/dashboard");
   };
 
   return (
