@@ -1,4 +1,55 @@
-h1{
+.posts > h1{
+  margin: 0;
+  margin-bottom: 10px;
+}
+.posts > p {
+  margin: 0;
+  height: auto;
+}
+
+
+.picture-box{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  grid-area: picture;
+  margin-right: 5px;
+}
+
+.posts {
+  grid-area: post;
+  border: 1px solid gray;
+  margin: 0;
+  height: auto;
   color: white;
-  position:absolute;
+  padding: 5px;
+}
+
+.photo > img {
+  width: 100%;
+  height: auto;
+}
+.post-container {
+  box-sizing: border-box;
+  margin: 80px 20px 20px 20px;
+  /* border: 1px solid gray; */
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template:
+  "picture post"
+  " - post";
+}
+
+@media screen and (min-width: 600px){
+  .logged-in-nav{
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post-container{
+    width: 600px;
+    grid-template-columns: 1fr 4fr;
+
+  }
 }

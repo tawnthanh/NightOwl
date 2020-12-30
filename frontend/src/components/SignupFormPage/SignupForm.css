@@ -24,3 +24,11 @@ button {
   font-family: 'Inconsolata', monospace;
 
 }
+
+ul {
+  color: red;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px 0px 2px 5px;
+  font-weight: bold;
+}

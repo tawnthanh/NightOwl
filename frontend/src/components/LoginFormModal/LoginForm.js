@@ -14,10 +14,11 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    dispatch(sessionActions.login({ credential, password })).catch(
+    dispatch(sessionActions.login({ credential, password }))
+      .then( res => history.push("/dashboard"))
+      .catch(
       (res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
-        else history.push("/dashboard");
       }
     );
   };

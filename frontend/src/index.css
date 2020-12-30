@@ -13,17 +13,8 @@ body{
   position: relative;
   overflow: hidden;
   width: auto;
-  height: 400px;
 }
 
-/* .title {
-  color: white;
-  font-family: roboto;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-  align-self: center;
-  position: absolute;
-  margin-top: 399px;
-} */
 
 .logged-out-nav{
   margin-top: 0;
