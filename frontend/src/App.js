@@ -6,7 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
-import owlBackground from "./img/owl2.PNG";
+import owlBackground from "./img/owl5.png";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,21 +18,23 @@ function App() {
   return (
     <>
       <div className="home-container">
-        <img src={owlBackground} alt="owl" className="background-img"/>
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
+            <Route exact path="/">
+              <img src={owlBackground} alt="owl" className="background-img"/>
+              {/* <div className="title"><h1>NIGHT OWL</h1></div> */}
+            </Route>
             <Route path="/register">
+              <img src={owlBackground} alt="owl" className="background-img"/>
+              {/* <div className="title"><h1>NIGHT OWL</h1></div> */}
               <SignupFormPage />
             </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           </Switch>
         )}
-        <div className="title"><h1>NIGHT OWL</h1></div>
-      </div>
-      <div className="dashboard-container">
-      <Route path="/dashboard">
-        <Dashboard />
-      </Route>
       </div>
     </>
   );

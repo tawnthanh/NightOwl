@@ -8,6 +8,7 @@
   align-items: center;
   font-family: 'Inconsolata', monospace;
   margin-top:29px;
+  position: absolute;
 }
 
 h2 {
