@@ -14,6 +14,10 @@
   background-color: white;
   grid-area: picture;
   margin-right: 5px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .posts {
@@ -21,8 +25,11 @@
   border: 1px solid gray;
   margin: 0;
   height: auto;
-  color: white;
+  background-color: rgb(192, 192, 192);
+  color: black;
   padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 14px rgba(255,255,255, 1);
 }
 
 .photo > img {
@@ -32,7 +39,6 @@
 .post-container {
   box-sizing: border-box;
   margin: 80px 20px 20px 20px;
-  /* border: 1px solid gray; */
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template:
