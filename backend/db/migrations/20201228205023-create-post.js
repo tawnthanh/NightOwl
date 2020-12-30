@@ -16,6 +16,7 @@ module.exports = {
       postTypeId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model: 'PostTypes'}
       },
       title: {
         type: Sequelize.STRING

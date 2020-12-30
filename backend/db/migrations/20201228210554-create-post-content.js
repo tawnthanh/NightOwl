@@ -13,9 +13,13 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Posts' }
       },
-      fieldName: {
-        allowNull: false,
-        type: Sequelize.ENUM('photo', 'video', 'text', 'audio')
+      description: {
+        allowNull: true,
+        type: Sequelize.TEXT
+      },
+      src: {
+        allowNull: true,
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
