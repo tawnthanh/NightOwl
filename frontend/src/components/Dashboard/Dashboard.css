@@ -1,3 +1,7 @@
+.spacer {
+  height: 55px;
+  background-color: black;
+}
 .posts > h1{
   margin: 0;
   margin-bottom: 10px;
@@ -39,7 +43,7 @@
 }
 .post-container {
   box-sizing: border-box;
-  margin: 80px 20px 20px 20px;
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template:

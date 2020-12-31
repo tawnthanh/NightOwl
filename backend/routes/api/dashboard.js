@@ -12,7 +12,6 @@ router.get("/posts", asyncHandler(async (req , res) => {
     return type.type;
   });
 
-  console.log("postTypes", postTypes);
 
   const posts = postObj.map(post => {
     const postType = postTypes.filter((type, idx) => {

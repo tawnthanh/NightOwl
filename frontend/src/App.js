@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Switch , Redirect } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 // import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
@@ -11,9 +11,13 @@ import owlBackground from "./img/owl5.png";
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const sessionUser = useSelector((state) => state.session.user);
+
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
 
   return (
     <>
@@ -23,11 +27,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <img src={owlBackground} alt="owl" className="background-img"/>
-              {/* <div className="title"><h1>NIGHT OWL</h1></div> */}
             </Route>
             <Route path="/register">
               <img src={owlBackground} alt="owl" className="background-img"/>
-              {/* <div className="title"><h1>NIGHT OWL</h1></div> */}
               <SignupFormPage />
             </Route>
           <Route path="/dashboard">

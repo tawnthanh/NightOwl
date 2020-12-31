@@ -20,6 +20,7 @@ function Dashboard() {
 
   return (
     <div>
+      <div className="spacer"></div>
       {displayPost("text")}
       {displayPost("photo")}
       {displayPost("audio")}
