@@ -3,14 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect , } from "react-router-dom";
 import './Dashboard.css';
 import displayPost from "./displayPost.js";
+import { displayAllPosts } from '../../store/dashboard'
 
 function Dashboard() {
   const sessionUser = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.dashboard);
 
-  useEffect(() => console.log(sessionUser), []);
+  useEffect(() => {
+    dispatch(displayAllPosts());
+    console.log(posts);
+  }, []);
 
   if (!sessionUser) return <Redirect to="/" />;
-
 
 
   return (

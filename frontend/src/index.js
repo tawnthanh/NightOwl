@@ -11,6 +11,7 @@ import App from './App';
 import configureStore from './store';
 import { restoreCSRF, fetch } from './store/csrf';
 import * as sessionActions from './store/session';
+import dashboardReducer from './store/dashboard';
 
 const store = configureStore();
 
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== "production") {
   window.csrfFetch = fetch;
   window.store = store;
   window.sessionActions = sessionActions;
+  window.dashboardReducer = dashboardReducer;
 }
 
 // const Carrot = () => (

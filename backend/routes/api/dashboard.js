@@ -29,8 +29,8 @@ router.get("/posts", asyncHandler(async (req , res) => {
       description: post.description,
     }
   });
-  
-  res.json(posts)
+
+  return res.json(posts)
 }))
 
 module.exports = router;
