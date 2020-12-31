@@ -9,16 +9,24 @@ router.get("/posts", asyncHandler(async (req , res) => {
   const postTypesObj = await db.PostType.findAll();
 
   const postTypes = postTypesObj.map(type => {
-    return {id:type.id, type:type.type}
+    return type.type;
   });
 
+  console.log("postTypes", postTypes);
+
   const posts = postObj.map(post => {
+    const postType = postTypes.filter((type, idx) => {
+      if (idx+1 === post.Post.postTypeId) {
+        return type;
+      }
+    })
+
     return {
       id: post.id,
       postId: post.postId,
-      description: post.description,
-      title: post.Post.title,
       postType: postType,
+      title: post.Post.title,
+      description: post.description,
     }
   });
   
