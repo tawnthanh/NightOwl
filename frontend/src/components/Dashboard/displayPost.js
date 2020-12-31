@@ -3,16 +3,18 @@ import TextDisplay from "../TextDisplay";
 import AudioDisplay from "../AudioDisplay";
 import VideoDisplay from "../VideoDisplay";
 
-const displayPost = (postType) => {
-  let src;
+const displayPost = (post) => {
+  const type = post.postType[0];
 
-  if (postType === "text") return <TextDisplay />;
+  console.log(post)
 
-  if (postType === "photo") return <PhotoDisplay />;
+  if (type === "text") return <TextDisplay post={post} />;
 
-  if (postType === "audio") return <AudioDisplay />;
+  else if (type === "photo") return <PhotoDisplay post={post}/>;
 
-  if (postType === "video") return <VideoDisplay />;
+  else if (type === "audio") return <AudioDisplay post={post}/>;
+
+  else if (type === "video") return <VideoDisplay post={post}/>;
 };
 
 export default displayPost;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect , } from "react-router-dom";
 import './Dashboard.css';
@@ -12,8 +12,7 @@ function Dashboard() {
 
   useEffect(() => {
     dispatch(displayAllPosts());
-    console.log(posts);
-  }, []);
+  }, [dispatch]);
 
   if (!sessionUser) return <Redirect to="/" />;
 
@@ -21,10 +20,9 @@ function Dashboard() {
   return (
     <div>
       <div className="spacer"></div>
-      {displayPost("text")}
-      {displayPost("photo")}
-      {displayPost("audio")}
-      {displayPost("video")}
+      { posts.map(post => {
+        return displayPost(post)
+      })}
     </div>
 
 )
