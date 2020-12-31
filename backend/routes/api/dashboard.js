@@ -7,7 +7,11 @@ const router = express.Router();
 router.get("/posts", asyncHandler(async (req , res) => {
   const postObj = await db.PostContent.findAll({ include: db.Post });
   const postTypesObj = await db.PostType.findAll();
+  const usersObj = await db.User.findAll();
 
+  const users = usersObj.map(user => user.username);
+
+  console.log("Users", users)
   const postTypes = postTypesObj.map(type => {
     return type.type;
   });
@@ -20,8 +24,14 @@ router.get("/posts", asyncHandler(async (req , res) => {
       }
     })
 
+    const associatedUser = users.filter((name, idx) => {
+      if (idx + 1 === post.Post.userId){
+        return name;
+      }
+    })
     return {
       id: post.id,
+      username: associatedUser,
       postId: post.postId,
       postType: postType,
       title: post.Post.title,
