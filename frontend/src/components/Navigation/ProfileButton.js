@@ -3,15 +3,18 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useHistory } from 'react-router-dom';
 import CreatePost from "../CreatePost";
+import { Modal } from '../../context/Modal';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
+    setShowModal(true);
   };
 
   useEffect(() => {
@@ -32,6 +35,7 @@ function ProfileButton({ user }) {
     history.push("/");
   };
 
+
   return (
     <>
       <button onClick={openMenu}>
@@ -41,8 +45,12 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown">
           Hi, {user.username}
           <button onClick={logout}>Log Out</button>
-          <CreatePost />
         </div>
+      )}
+      { showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <CreatePost />
+        </Modal>
       )}
     </>
   );
