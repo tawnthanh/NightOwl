@@ -6,8 +6,6 @@ import VideoDisplay from "../VideoDisplay";
 const displayPost = (post, idx) => {
   const type = post.postType[0];
 
-  console.log(post)
-
   if (type === "text") return <TextDisplay key={idx} post={post} />;
 
   else if (type === "photo") return <PhotoDisplay key={idx} post={post}/>;

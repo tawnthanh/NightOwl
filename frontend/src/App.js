@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
 import owlBackground from "./img/owl5.png";
+import CreatePost from "./components/CreatePost"
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,10 @@ function App() {
             </Route>
           <Route path="/dashboard">
             <Dashboard />
-          </Route>
+            </Route>
+            <Route path="/create-post/text">
+              <CreatePost />
+            </Route>
           </Switch>
         )}
       </div>
