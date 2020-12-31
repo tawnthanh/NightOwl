@@ -6,12 +6,12 @@ const TextDisplay = ({post}) => {
       <img src={profilePic} alt="profile-default" className="picture-box"/>
       <div className="posts text">
         <h1>{post.title}</h1>
-        <p>
+        <div>
           <h3>
             {post.username}:
           </h3>
           {post.description}
-        </p>
+        </div>
       </div>
     </div>
   )

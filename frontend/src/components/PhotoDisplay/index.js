@@ -1,4 +1,3 @@
-import  owl  from "../../img/owl2.PNG";
 import profilePic from "../../img/profile-pic.png";
 
 const PhotoDisplay = ({post}) => {
@@ -9,10 +8,10 @@ const PhotoDisplay = ({post}) => {
       <div className="posts photo">
         <h1>{post.title}</h1>
         <img src={post.src} alt={post.title} />
-        <p>
+        <div>
           <h3>{post.username}</h3>
           {post.description}
-        </p>
+        </div>
       </div>
     </div>
   );

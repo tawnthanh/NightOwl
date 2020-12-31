@@ -9,7 +9,7 @@ const VideoDisplay = ({post}) => {
         <img src={profilePic} alt="profile-default" className="picture-box"/>
         <div className="posts video">
           <h1>{post.title}</h1>
-          <iframe width="100%" height="315" src={post.src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title={post.id} width="100%" height="315" src={post.src} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <div>
             <h3>{post.username}:</h3>
             {post.description}

@@ -7,7 +7,7 @@ const AudioDisplay = ({post}) => {
       <img src={profilePic} alt="profile-default" className="picture-box"/>
         <div className="posts audio">
           <h1>{post.title}</h1>
-          <iframe src={post.src} width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <iframe title={post.id} src={post.src} width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           <div>
             <h3>{post.username}:</h3>
             {post.description}

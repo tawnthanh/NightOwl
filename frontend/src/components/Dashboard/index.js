@@ -20,8 +20,8 @@ function Dashboard() {
   return (
     <div>
       <div className="spacer"></div>
-      { posts.map(post => {
-        return displayPost(post)
+      { posts.map((post, idx) => {
+        return displayPost(post, idx)
       })}
     </div>
 

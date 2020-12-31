@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useHistory } from 'react-router-dom';
+import CreatePost from "../CreatePost";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown">
           Hi, {user.username}
           <button onClick={logout}>Log Out</button>
+          <CreatePost />
         </div>
       )}
     </>

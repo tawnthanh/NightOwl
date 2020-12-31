@@ -33,6 +33,7 @@
 .profile-button {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .logged-in-nav{
