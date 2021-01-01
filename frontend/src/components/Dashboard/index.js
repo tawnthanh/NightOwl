@@ -13,7 +13,7 @@ function Dashboard() {
   useEffect(() => {
     setTimeout(() => {
       dispatch(displayAllPosts());
-    }, 100)
+    }, 500)
   }, [dispatch]);
 
   if (!sessionUser) return <Redirect to="/" />;

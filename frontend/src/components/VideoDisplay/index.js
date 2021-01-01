@@ -18,6 +18,3 @@ const VideoDisplay = ({post}) => {
 }
 
 export default VideoDisplay;
-
-
-git commit -m"Video posts properly pulled from form to render on dashboard"
