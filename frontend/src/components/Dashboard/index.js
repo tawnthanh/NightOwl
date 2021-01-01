@@ -11,7 +11,9 @@ function Dashboard() {
   const posts = useSelector((state) => state.dashboard);
 
   useEffect(() => {
-    dispatch(displayAllPosts());
+    setTimeout(() => {
+      dispatch(displayAllPosts());
+    }, 100)
   }, [dispatch]);
 
   if (!sessionUser) return <Redirect to="/" />;

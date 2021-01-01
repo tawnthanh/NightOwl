@@ -10,7 +10,6 @@ router.get("/:postType", asyncHandler(async (req, res) => {
   });
 
   res.json(postTypeId)
-  console.log(postTypeId.id);
 
 }));
 

@@ -8,7 +8,7 @@ const PhotoDisplay = ({post}) => {
       <div className="posts photo">
         <h1>{post.title}</h1>
         <img src={post.src} alt={post.title} />
-        <div>
+      <div>
           <h3>{post.username}</h3>
           {post.description}
         </div>

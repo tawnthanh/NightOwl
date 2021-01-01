@@ -11,16 +11,9 @@ const setAllPosts = (posts) => ({
 //THUNK
 export const displayAllPosts = () => async (dispatch) => {
   const res = await fetch('/api/dashboard/posts');
-  if (res.ok) {
-    try {
-      const posts = res.data;
-      console.log(posts)
-      dispatch(setAllPosts(posts));
-    } catch {
-      console.log("issue with the res.json")
-      console.log(res);
-    }
-  }
+  const posts = res.data;
+  dispatch(setAllPosts(posts));
+
 }
 
 

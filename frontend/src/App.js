@@ -37,6 +37,15 @@ function App() {
             <Route path="/create-post/text">
               <CreatePost />
             </Route>
+            <Route path="/create-post/photo">
+              <CreatePost />
+            </Route>
+            <Route path="/create-post/audio">
+              <CreatePost />
+            </Route>
+            <Route path="/create-post/video">
+              <CreatePost />
+            </Route>
           </Switch>
         )}
       </div>

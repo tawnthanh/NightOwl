@@ -6,6 +6,9 @@
   margin: 0;
   margin-bottom: 10px;
   border-bottom: solid;
+  overflow-wrap: break-word;
+  width: auto;
+  height: auto;
 }
 .posts > p {
   margin: 0;
@@ -14,8 +17,8 @@
 
 
 .picture-box{
-  width: 100px;
-  height: 100px;
+  width: 75pxpx;
+  height: 75px;
   background-color: white;
   grid-area: picture;
   margin-right: 5px;
@@ -29,7 +32,7 @@
   grid-area: post;
   border: 1px solid gray;
   margin: 0;
-  height: auto;
+
   background-color: rgb(192, 192, 192);
   color: black;
   padding: 5px;
@@ -37,9 +40,18 @@
   box-shadow: 0px 0px 14px rgba(255,255,255, 1);
 }
 
-.photo > img {
+.photo, .audio, .video {
+  max-width: 470px;
+  max-height: auto;
+}
+
+.video iframe {
+  height: 315px;
   width: 100%;
-  height: auto;
+}
+
+.photo img {
+  max-width: 100%;
 }
 .post-container {
   box-sizing: border-box;
