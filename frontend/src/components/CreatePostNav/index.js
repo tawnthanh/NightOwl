@@ -1,28 +1,28 @@
 import "./CreatePost.css";
-import { NavLink } from 'react-router-dom';
 
 const CreatePostNav = () => {
+
   return (
     <div className="create-a-post">
       <div>
-        <a href="/create-post/text" >
+        <a href="/create-post/text">
           <i className="fas fa-text-height"></i>
         </a>
       </div>
       <div>
-        <NavLink to="/create-post/photo">
+        <a href="/create-post/photo">
           <i className="fas fa-image"></i>
-        </NavLink>
+        </a>
       </div>
       <div>
-        <NavLink to="/create-post/video">
+        <a href="/create-post/video">
           <i className="fas fa-video"></i>
-        </NavLink>
+        </a>
       </div>
       <div>
-        <NavLink to="/create-post/audio">
+        <a href="/create-post/audio">
           <i className="fab fa-youtube"></i>
-        </NavLink>
+        </a>
       </div>
     </div>
   )

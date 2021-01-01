@@ -5,7 +5,10 @@ const db  = require("../../db/models");
 const router = express.Router();
 
 router.get("/posts", asyncHandler(async (req , res) => {
-  const postObj = await db.PostContent.findAll({ include: db.Post });
+  const postObj = await db.PostContent.findAll({
+    include: db.Post,
+    order: [['updatedAt', 'DESC']]
+  });
   const postTypesObj = await db.PostType.findAll();
   const usersObj = await db.User.findAll();
 

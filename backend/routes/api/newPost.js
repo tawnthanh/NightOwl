@@ -15,7 +15,7 @@ router.get("/:postType", asyncHandler(async (req, res) => {
 }));
 
 router.post("/:postType", asyncHandler(async (req, res) => {
-  const { title, description, src, userId } = req.body;
+  const { title, description, src, userId} = req.body;
   const postType = req.params.postType;
 
   const postTypeId = await db.PostType.findOne({

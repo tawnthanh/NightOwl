@@ -1,6 +1,7 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPost } from '../../store/post';
 
 const CreatePostForm = () => {
   const history = useHistory();
@@ -9,21 +10,30 @@ const CreatePostForm = () => {
   const [src, setSrc] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
+  const sessionUser = useSelector((state) => state.session.user);
+
+  const pathArray = window.location.pathname.split("/");
+  const postType = pathArray[pathArray.length - 1];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    const post = {
+      title,
+      postType,
+      description,
+      src,
+      userId: sessionUser.id
+    };
 
-
-  }
-  const backToDashboard = (e) => {
-    e.preventDefault();
+    dispatch(createPost(post));
     history.push("/dashboard");
+
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="form-posts" onSubmit={handleSubmit}>
         {errors.map((error, idx) => (
           <p className="post-error" key={idx}>{error}</p>
         ))}
@@ -58,7 +68,7 @@ const CreatePostForm = () => {
           </label>
         </div>
         <div>
-          <button onClick={backToDashboard}>CREATE POST</button>
+          <button type="submit">CREATE POST</button>
         </div>
       </form>
       <h1>FORM</h1>

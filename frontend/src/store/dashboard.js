@@ -1,3 +1,6 @@
+import { fetch } from './csrf.js';
+
+
 const DISPLAY_POSTS = 'posts/DISPLAY_POSTS';
 
 const setAllPosts = (posts) => ({
@@ -8,8 +11,16 @@ const setAllPosts = (posts) => ({
 //THUNK
 export const displayAllPosts = () => async (dispatch) => {
   const res = await fetch('/api/dashboard/posts');
-  const posts = await res.json();
-  dispatch(setAllPosts(posts));
+  if (res.ok) {
+    try {
+      const posts = res.data;
+      console.log(posts)
+      dispatch(setAllPosts(posts));
+    } catch {
+      console.log("issue with the res.json")
+      console.log(res);
+    }
+  }
 }
 
 
