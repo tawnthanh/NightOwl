@@ -1,0 +1,25 @@
+.create-a-post{
+  /* position: fixed; */
+  /* width: 628px; */
+  background-color: black;
+  /* top: 55px; */
+  /* right: 240px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.create-a-post > div {
+  margin: 4px;
+  width: 50px;
+  height: auto;
+  text-align: center;
+}
+
+i {
+  width: 60px;
+  height: auto;
+}

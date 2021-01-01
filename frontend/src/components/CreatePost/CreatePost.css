@@ -1,0 +1,35 @@
+form {
+  background-color: rgb(192, 189, 189);
+  height: auto;
+  width: 600px;
+  margin-top: 60px;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+label, input, textarea{
+  width: 550px;
+  height: auto;
+  font-size: 36px;
+  border-radius: 4px;
+  margin: 5px;
+  font-family: roboto;
+}
+
+textarea{
+  max-width: 550px;
+}
+
+form button {
+  width: 550px;
+  font-size: 16px;
+  font-family: roboto;
+}
+
+.post-error {
+  font-family: roboto;
+  color: red;
+  text-align: left;
+  width: 550px;
+}
