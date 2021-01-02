@@ -1,6 +1,5 @@
 .profile-dropdown {
-  position: absolute;
-  right: 40px;
+
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -11,8 +10,6 @@
 }
 
 .menu-dropdown {
-  position: absolute;
-  right: 40px;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -52,15 +49,8 @@
   grid-template: "name profile more" 588px 10px 10px; */
 }
 
-.logged-in-nav > .night-owl-logo {
-  font-size: auto;
-  width: 572px;
-}
-
-
-
 a {
-  font-size: 16pt;
+  font-size: 24pt;
   margin: 0px 10px 0px 0px;
   text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.918);
 }
@@ -68,14 +58,11 @@ a {
 .profile-button {
   display: flex;
   flex-direction: row;
-  width: 40px;
-  position: relative;
+  /* width: 40px;
+  position: relative; */
 }
 
-.menu {
-  grid-area: menu;
-  margin-right: 30px;
-}
+
 
 
 @media screen and (min-width: 628px){
@@ -83,5 +70,22 @@ a {
     width: 628px;
     display: flex;
     flex-direction: row;
+  }
+  .logged-in-nav > .night-owl-logo {
+    font-size: auto;
+    width: 572px;
+  }
+
+  .profile-button {
+    width: 40px;
+    position: relative;
+  }
+  .menu {
+    margin-right: 30px;
+  }
+
+  .profile-dropdown, .menu-dropdown {
+    position: absolute;
+    right: 40px;
   }
 }
