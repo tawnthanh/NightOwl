@@ -8,6 +8,7 @@ import { Modal } from '../../context/Modal';
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const history = useHistory();
 
@@ -16,9 +17,15 @@ function ProfileButton({ user }) {
     setShowMenu(true);
   };
 
+  const openProfile = () => {
+    if (showMenu) return;
+    setShowProfile(true);
+  };
+
   const openNewPost = () => {
     setShowModal(true);
-  }
+  };
+  
   useEffect(() => {
     if (!showMenu) return;
 
@@ -31,6 +38,18 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
+  useEffect(() => {
+    if (!showProfile) return;
+
+    const closeProfile = () => {
+      setShowProfile(false);
+    };
+
+    document.addEventListener('click', closeProfile);
+
+    return () => document.removeEventListener("click", closeProfile);
+  }, [showProfile]);
+
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
@@ -40,16 +59,25 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
+      <button onClick={openProfile}>
         <i className="fas fa-user-circle" />
       </button>
-      {showMenu && (
+      <button onClick={openMenu}>
+        <i className="fas fa-align-justify"></i>
+      </button>
+      {showProfile && (
         <div className="profile-dropdown">
           Hi, {user.username}
-          <button onClick={openNewPost}>New Post</button>
           <button onClick={logout}>Log Out</button>
         </div>
       )}
+      { showMenu && (
+        <div className="menu-dropdown">
+          <button onClick={openNewPost}>New Post</button>
+        </div>
+      )
+
+      }
       { showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <CreatePostNav />

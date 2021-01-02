@@ -67,11 +67,7 @@
 }
 
 @media screen and (min-width: 628px){
-  .logged-in-nav{
-    width: 628px;
-    display: flex;
-    justify-content: space-between;
-  }
+
 
   .post-container{
     width: 600px;

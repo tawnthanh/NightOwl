@@ -12,10 +12,13 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <div className="logged-in-nav">
-        <a className="nav night-owl-logo" href="/dashboard">NIGHT OWL</a>
+        <div className="night-owl-logo">
+          <a className="nav " href="/dashboard">NIGHT OWL</a>
+        </div>
         <div className="profile-button">
           <ProfileButton user={sessionUser} />
         </div>
+
       </div>
     );
   } else {

@@ -1,10 +1,25 @@
 .profile-dropdown {
-  /* position: absolute; */
+  position: absolute;
+  right: 40px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  width: auto;
-  height: 100%;
+  width: 100px;
+  height: auto;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.menu-dropdown {
+  position: absolute;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100px;
+  height: auto;
+  border: 1px solid;
+  border-radius: 4px;
 }
 
 .navbar {
@@ -33,7 +48,16 @@
 
 .logged-in-nav{
   background-color: rgb(17, 16, 16);
+  /* display: grid;
+  grid-template: "name profile more" 588px 10px 10px; */
 }
+
+.logged-in-nav > .night-owl-logo {
+  font-size: auto;
+  width: 572px;
+}
+
+
 
 a {
   font-size: 16pt;
@@ -44,4 +68,20 @@ a {
 .profile-button {
   display: flex;
   flex-direction: row;
+  width: 40px;
+  position: relative;
+}
+
+.menu {
+  grid-area: menu;
+  margin-right: 30px;
+}
+
+
+@media screen and (min-width: 628px){
+  .logged-in-nav{
+    width: 628px;
+    display: flex;
+    flex-direction: row;
+  }
 }
