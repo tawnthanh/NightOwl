@@ -12,14 +12,10 @@
   box-sizing: border-box;
 }
 
-.create-a-post > div {
-  margin: 4px;
-  width: 50px;
-  height: auto;
+.text-nav, .photo-nav, .video-nav, .audio-nav{
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0;
+  height: 50px;
   text-align: center;
-}
-
-i {
-  width: 60px;
-  height: auto;
 }

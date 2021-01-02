@@ -15,7 +15,6 @@
   height: auto;
 }
 
-
 .picture-box{
   width: 75pxpx;
   height: 75px;
@@ -40,7 +39,7 @@
   box-shadow: 0px 0px 14px rgba(255,255,255, 1);
 }
 
-.photo, .audio, .video {
+.photo, .audio, .video, .text {
   max-width: 470px;
   max-height: auto;
 }
@@ -61,6 +60,10 @@
   grid-template:
   "picture post"
   " - post";
+}
+
+.details {
+  white-space: pre-wrap;
 }
 
 @media screen and (min-width: 628px){

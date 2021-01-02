@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useHistory } from 'react-router-dom';
-import CreatePost from "../CreatePostNav";
+import CreatePostNav from "../CreatePostNav";
 import { Modal } from '../../context/Modal';
 
 function ProfileButton({ user }) {
@@ -14,9 +14,11 @@ function ProfileButton({ user }) {
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
-    setShowModal(true);
   };
 
+  const openNewPost = () => {
+    setShowModal(true);
+  }
   useEffect(() => {
     if (!showMenu) return;
 
@@ -44,12 +46,13 @@ function ProfileButton({ user }) {
       {showMenu && (
         <div className="profile-dropdown">
           Hi, {user.username}
+          <button onClick={openNewPost}>New Post</button>
           <button onClick={logout}>Log Out</button>
         </div>
       )}
       { showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreatePost />
+          <CreatePostNav />
         </Modal>
       )}
     </>

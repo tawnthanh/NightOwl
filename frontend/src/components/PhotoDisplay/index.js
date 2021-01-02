@@ -1,4 +1,5 @@
 import profilePic from "../../img/profile-pic.png";
+import ReblogLike from "../ReblogLike";
 
 const PhotoDisplay = ({post}) => {
 
@@ -10,10 +11,13 @@ const PhotoDisplay = ({post}) => {
             <h1>{post.title}</h1>
         )}
         <img src={post.src} alt={post.title} />
-      <div>
-          <h3>{post.username}</h3>
+        <div className="details">
+          <h3>{post.username}: </h3>
           {post.description}
         </div>
+        <div>
+            <ReblogLike />
+          </div>
       </div>
     </div>
   );

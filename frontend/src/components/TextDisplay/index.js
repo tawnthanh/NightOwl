@@ -1,4 +1,5 @@
 import profilePic from "../../img/profile-pic.png";
+import ReblogLike from "../ReblogLike";
 
 const TextDisplay = ({post}) => {
   return (
@@ -8,12 +9,13 @@ const TextDisplay = ({post}) => {
         { post.title && (
             <h1>{post.title}</h1>
         )}
-        <div>
+        <div className="details">
           <h3>
             {post.username}:
           </h3>
           {post.description}
         </div>
+        <ReblogLike />
       </div>
     </div>
   )

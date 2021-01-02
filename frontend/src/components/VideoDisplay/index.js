@@ -1,5 +1,5 @@
 import profilePic from "../../img/profile-pic.png";
-
+import ReblogLike from "../ReblogLike";
 
 const VideoDisplay = ({post}) => {
     return (
@@ -13,6 +13,9 @@ const VideoDisplay = ({post}) => {
           <div>
             <h3>{post.username}:</h3>
             {post.description}
+          </div>
+          <div>
+            <ReblogLike />
           </div>
         </div>
       </div>
