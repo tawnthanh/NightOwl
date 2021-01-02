@@ -27,9 +27,6 @@ function Navigation({ isLoaded }){
         <div>
           <LoginFormModal />
         </div>
-        <div>
-          <NavLink className="nav" to="/register">Register</NavLink>
-        </div>
       </div>
     );
   }

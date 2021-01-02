@@ -6,7 +6,9 @@ const PhotoDisplay = ({post}) => {
     <div className="post-container ">
       <img src={profilePic} alt="profile-default" className="picture-box" />
       <div className="posts photo">
-        <h1>{post.title}</h1>
+        { post.title && (
+            <h1>{post.title}</h1>
+        )}
         <img src={post.src} alt={post.title} />
       <div>
           <h3>{post.username}</h3>

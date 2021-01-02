@@ -1,5 +1,6 @@
 import VidAudForm from './VidAudForm';
 import TextForm from './TextForm';
+import PhotoForm from './PhotoForm';
 
 const CreatePostForm = () => {
   const pathArray = window.location.pathname.split("/");
@@ -13,7 +14,7 @@ const CreatePostForm = () => {
         )
       }
       { postType === "photo" && (
-        <TextForm />
+        <PhotoForm />
         )
       }
       { postType === "audio" && (

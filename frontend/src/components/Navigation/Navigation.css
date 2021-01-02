@@ -17,7 +17,7 @@
 
 .navbar div {
   box-sizing: border-box;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .nav, a{
@@ -37,6 +37,7 @@
 
 a {
   font-size: 16pt;
+  margin: 0px 10px 0px 0px;
   text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.918);
 }
 

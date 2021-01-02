@@ -5,7 +5,9 @@ const TextDisplay = ({post}) => {
     <div className="post-container">
       <img src={profilePic} alt="profile-default" className="picture-box"/>
       <div className="posts text">
-        <h1>{post.title}</h1>
+        { post.title && (
+            <h1>{post.title}</h1>
+        )}
         <div>
           <h3>
             {post.username}:

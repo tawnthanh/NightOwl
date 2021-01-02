@@ -32,6 +32,7 @@
   text-align: center;
   font-family: 'Inconsolata', monospace;
   margin: 2px;
+  max-width: 100%;
 }
 
 form {
@@ -43,4 +44,42 @@ form {
 
 .login-error{
   color: red;
+}
+
+/* REGISTER FORM */
+.register{
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: rgb(145, 134, 134);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inconsolata', monospace;
+  margin: 0px;
+  padding: 5px;
+  /* position: absolute; */
+}
+
+h2 {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.register > form {
+  margin: 0;
+}
+
+button {
+  font-family: 'Inconsolata', monospace;
+
+}
+
+ul {
+  color: red;
+  list-style-type: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 15px;
 }
