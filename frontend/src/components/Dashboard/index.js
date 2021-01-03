@@ -7,8 +7,8 @@ import { displayAllPosts } from '../../store/dashboard'
 
 function Dashboard() {
   const sessionUser = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
   const posts = useSelector((state) => state.dashboard);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {

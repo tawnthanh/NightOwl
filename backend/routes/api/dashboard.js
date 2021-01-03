@@ -35,7 +35,6 @@ router.get("/posts", asyncHandler(async (req , res) => {
 
     const match = likedPostsObj.filter(likedPost => {
       let postMatch = likedPost.postId === post.id;
-      let userMatch = likedPost.userId === associatedUser[0].id
       return postMatch;
     })
 
@@ -74,16 +73,18 @@ router.post("/posts/like", asyncHandler(async (req, res) => {
 }));
 
 
-// router.get("/posts/like", asyncHandler(async (req, res) => {
-//   const { userId, postId } = req.body;
-//   const likes = await db.Like.findAll({
-//     where: { userId, postId },
-//   })
+router.get("/posts/like", asyncHandler(async (req, res) => {
+  const likePostObj = await db.Like.findAll({
+    include: [db.User],
+    order: [['updatedAt', 'DESC']]
+  });
 
-//   likes.likeStatus ? res.json(likes) : "no hit girl";
-//   // console.log( likes );
-//   // res.json(likes);
-// }));
+  res.json(likePostObj)
+}))
+
+router.get("/:user/posts", asyncHandler(async (req, res) => {
+
+}))
 
 
 module.exports = router;

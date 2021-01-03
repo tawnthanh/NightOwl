@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
 import owlBackground from "./img/owl5.png";
 import CreatePost from "./components/CreatePost"
+import LikesDisplay from "./components/LikesDisplay";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,9 @@ function App() {
             </Route>
             <Route path="/create-post/video">
               <CreatePost />
+            </Route>
+            <Route path={`/${sessionUser.username}/likes`} >
+              <LikesDisplay />
             </Route>
           </Switch>
         )}
