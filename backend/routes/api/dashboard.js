@@ -19,6 +19,7 @@ router.get("/posts", asyncHandler(async (req , res) => {
   });
 
 
+
   const posts = postObj.map(post => {
     const postType = postTypes.filter((type, idx) => {
       if (idx+1 === post.Post.postTypeId) {
@@ -43,23 +44,35 @@ router.get("/posts", asyncHandler(async (req , res) => {
     }
   });
 
-  return res.json(posts)
+  return res.json(posts);
 }))
 
 router.post("/posts/like", asyncHandler(async (req, res) => {
   const { postId, userId } = req.body;
 
-  console.log('backend postId', postId);
-  console.log('backend userId', userId);
+  const userLikedPost = await db.Like.findOne({
+    where: { userId, postId },
+  })
 
-  const likeData = await db.Like.create({postId, userId})
-  console.log('likeData', likeData);
+  if (userLikedPost) {
+    await userLikedPost.destroy();
+  } else {
+    await db.Like.create({ postId, userId })
+  }
 
 }));
 
-router.get("/posts/like", asyncHandler(async (req, res) => {
-  // const likes = await db.Like.findAll()
-  console.log(db);
-}));
+
+// router.get("/posts/like", asyncHandler(async (req, res) => {
+//   const { userId, postId } = req.body;
+//   const likes = await db.Like.findAll({
+//     where: { userId, postId },
+//   })
+
+//   likes.likeStatus ? res.json(likes) : "no hit girl";
+//   // console.log( likes );
+//   // res.json(likes);
+// }));
+
 
 module.exports = router;
