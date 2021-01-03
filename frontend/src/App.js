@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Switch, Redirect } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -10,6 +10,7 @@ import CreatePost from "./components/CreatePost"
 
 function App() {
   const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user)
   const [isLoaded, setIsLoaded] = useState(false);
 
 
@@ -25,7 +26,10 @@ function App() {
         {isLoaded && (
           <Switch>
             <Route exact path="/">
-              <img src={owlBackground} alt="owl" className="background-img"/>
+              <img src={owlBackground} alt="owl" className="background-img" />
+              {sessionUser && (
+                <Redirect to="/dashboard" />
+              )}
             </Route>
             <Route path="/register">
               <img src={owlBackground} alt="owl" className="background-img"/>

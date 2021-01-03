@@ -3,10 +3,33 @@
   flex-direction: row-reverse;
   /* box-sizing: border-box;
   margin: 2px; */
+  height: 100%;
 }
 
 .like-dropdown {
   /* position: relative; */
   color: red;
   font-family: roboto;
+}
+
+.like{
+  color: red;
+  background-color: rgb(192, 192, 192);
+  border-style: none;
+}
+
+
+
+button.noLike:hover {
+  color: red;
+}
+
+button.like:hover {
+  color: white;
+}
+
+button.noLike {
+  background-color: rgb(192, 192, 192);
+  border-style: none;
+  color: white;
 }

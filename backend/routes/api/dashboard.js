@@ -13,12 +13,11 @@ router.get("/posts", asyncHandler(async (req , res) => {
   const usersObj = await db.User.findAll();
   const likedPostsObj = await db.Like.findAll();
 
-  const users = usersObj.map(user => user.username);
+  const users = usersObj.map(user => user);
 
   const postTypes = postTypesObj.map(type => {
     return type.type;
   });
-
 
 
   const posts = postObj.map((post) => {
@@ -29,25 +28,34 @@ router.get("/posts", asyncHandler(async (req , res) => {
     })
 
     const associatedUser = users.filter((name, idx) => {
-      if (idx + 1 === post.Post.userId) {
+      if (name.id === post.Post.userId) {
         return name;
       }
     });
 
+    const match = likedPostsObj.filter(likedPost => {
+      let postMatch = likedPost.postId === post.id;
+      let userMatch = likedPost.userId === associatedUser[0].id
+      return postMatch;
+    })
 
 
     return {
       id: post.id,
-      username: associatedUser,
+      userId: associatedUser[0].id,
+      username: associatedUser[0].username,
+      likedPost: match,
       postId: post.postId,
       postType: postType,
       title: post.Post.title,
       description: post.description,
-      src: post.src,
+      src: post.src
     }
   });
 
-  return res.json(likedPostsObj);
+
+
+  return res.json(posts);
 }))
 
 router.post("/posts/like", asyncHandler(async (req, res) => {
