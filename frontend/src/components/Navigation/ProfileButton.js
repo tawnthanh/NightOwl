@@ -74,6 +74,7 @@ function ProfileButton({ user }) {
       { showMenu && (
         <div className="menu-dropdown">
           <button onClick={openNewPost}>New Post</button>
+          <button onClick={() => history.push(`/${user.username}/likes`)}> View Likes </button>
         </div>
       )
 
