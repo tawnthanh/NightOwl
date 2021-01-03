@@ -1,4 +1,4 @@
-import "./CreatePost.css";
+import "./CreatePostNav.css";
 
 const CreatePostNav = () => {
 

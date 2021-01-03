@@ -1,9 +1,10 @@
 import profilePic from "../../img/profile-pic.png";
+import PostFooter from "../PostFooter";
 
 const AudioDisplay = ({post}) => {
   // if (post.src[0].includes("spotify")) {
     return (
-      <div className="post-container ">
+      <div className="post-container" id={post.id}>
       <img src={profilePic} alt="profile-default" className="picture-box"/>
         <div className="posts audio">
           { post.title && (
@@ -13,6 +14,9 @@ const AudioDisplay = ({post}) => {
           <div>
             <h3>{post.username}:</h3>
             {post.description}
+          </div>
+          <div>
+            <PostFooter post={post}/>
           </div>
         </div>
       </div>

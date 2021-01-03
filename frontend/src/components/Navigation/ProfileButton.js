@@ -25,7 +25,7 @@ function ProfileButton({ user }) {
   const openNewPost = () => {
     setShowModal(true);
   };
-  
+
   useEffect(() => {
     if (!showMenu) return;
 

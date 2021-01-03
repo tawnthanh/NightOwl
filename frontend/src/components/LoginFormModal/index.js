@@ -28,6 +28,7 @@ function LoginFormModal() {
             <LoginForm />
             )
           }
+
           { page === "register" && (
             <RegisterForm />
             )

@@ -10,6 +10,7 @@
   align-content: center;
   margin: 0;
   box-sizing: border-box;
+  height: 93px;
 }
 
 .text-nav, .photo-nav, .video-nav, .audio-nav{

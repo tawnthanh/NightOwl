@@ -1,10 +1,10 @@
 import profilePic from "../../img/profile-pic.png";
-import ReblogLike from "../ReblogLike";
+import PostFooter from "../PostFooter";
 
 const PhotoDisplay = ({post}) => {
 
   return (
-    <div className="post-container ">
+    <div className="post-container " id={post.id}>
       <img src={profilePic} alt="profile-default" className="picture-box" />
       <div className="posts photo">
         { post.title && (
@@ -16,8 +16,8 @@ const PhotoDisplay = ({post}) => {
           {post.description}
         </div>
         <div>
-            <ReblogLike />
-          </div>
+          <PostFooter post={post}/>
+        </div>
       </div>
     </div>
   );

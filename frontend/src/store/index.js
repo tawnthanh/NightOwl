@@ -5,7 +5,7 @@ import dashboard from './dashboard';
 import post from './post';
 
 const rootReducer = combineReducers({
-  session, dashboard, post
+  session, dashboard
 });
 
 let enhancer;

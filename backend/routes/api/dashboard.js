@@ -46,4 +46,20 @@ router.get("/posts", asyncHandler(async (req , res) => {
   return res.json(posts)
 }))
 
+router.post("/posts/like", asyncHandler(async (req, res) => {
+  const { postId, userId } = req.body;
+
+  console.log('backend postId', postId);
+  console.log('backend userId', userId);
+
+  const likeData = await db.Like.create({postId, userId})
+  console.log('likeData', likeData);
+
+}));
+
+router.get("/posts/like", asyncHandler(async (req, res) => {
+  // const likes = await db.Like.findAll()
+  console.log(db);
+}));
+
 module.exports = router;
