@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { displayAllLikes } from '../../store/dashboard';
 import { useEffect, useState } from "react";
 import VideoDisplay from '../VideoDisplay';
 import PhotoDisplay from '../PhotoDisplay';

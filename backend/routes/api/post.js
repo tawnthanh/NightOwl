@@ -48,13 +48,12 @@ router.delete("/delete-post/:postId", asyncHandler(async (req, res) => {
 
   const originalPost = await db.Post.findByPk(postId);
 
-  res.json(postContent)
   if (postContent) {
+    for (let i = 0; i < allLikes.length; i++){
+      await allLikes[i].destroy();
+    }
     await postContent.destroy();
     await originalPost.destroy();
-    allLikes.forEach( async (likedPost) => {
-      await likedPost.destroy();
-    });
   }
 
 }));
@@ -72,7 +71,7 @@ router.get("/delete-post/:postId", asyncHandler(async (req, res) => {
 
   const originalPost = await db.Post.findByPk(postId);
 
-  res.json(originalPost)
+  res.json(allLikes[1])
   // if (postContent) {
   //   await postContent.destroy();
   //   allLikes.forEach( async (likedPost) => {

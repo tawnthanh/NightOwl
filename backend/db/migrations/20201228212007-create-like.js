@@ -18,6 +18,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users'}
       },
+      likeStatus: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: true,
+      },
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),
