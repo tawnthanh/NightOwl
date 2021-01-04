@@ -38,10 +38,8 @@ Check it out [here](https://nightowl-app.herokuapp.com/)
 - ### Login
 	A function integrated into our homepage that will allow the user to login before they can view any content on the site.
 
-[insert picture of starting page]
-
 - ### Posts
-	Visitors to the site will be able to view content that relates to any true crime/ horror stories.
+	Logged in users to the site will be able to view all content that relates to any true crime/ horror stories made by other users.
 
 - ### User Experience
 	A registered user will be able to gain more functionality to the site.
@@ -49,10 +47,18 @@ Check it out [here](https://nightowl-app.herokuapp.com/)
 	The user can create their own posts with various content-types (text, video, and images), reblog other user content to their profile, "like" posts they see, and view their "Likes" and "Posts" list.
 
 	- #### Create Posts
-		The user will have their own "Profile" page where they can create their own posts.
+		The logged in user will have an opportunity to create their own posts. The types of posts they can make will be: text, audio(with embeded source), video (with embedded source), and a photo.
+
+	- #### Delete Posts
+		The user will be able to delete their own posts.
+
+	- #### Edit Posts
+		The user will be able to edit their own posts.
+		(Coming soon!)
 
 	- #### Reblog
 		The user will be able to re-post other people's content.
+		(Coming soon!)
 
 	- #### Likes
 		User will be able to add a post to their "Likes" list.
@@ -60,6 +66,6 @@ Check it out [here](https://nightowl-app.herokuapp.com/)
 	- #### View
 		Provide the user the ability to view their custom routes and places 	they have visited
 		- ##### View Posts
-			User will have access to see all the posts they have created as a nav bar on their own "Profile" page.
+			User will have access to see all the posts they have created as a nav bar on their own "Menu" page.
 		- ##### View Likes
-			There will be a link for the user to see all the posts they have liked in their "Profile" page.
+			There will be a link for the user to see all the posts they have liked in their "Menu" page.
