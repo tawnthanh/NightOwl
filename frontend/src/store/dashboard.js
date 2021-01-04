@@ -41,11 +41,13 @@ export const displayAllLikes = () => async (dispatch) => {
       if (likes[i].postId === posts[j].id) {
         likePost.push({
           ...likes[i],
+          userId: posts[j].userId,
           postType: posts[j].postType,
           title: posts[j].title,
           description: posts[j].description,
           src: posts[j].src,
           originalUser: posts[j].username,
+          likedPost: posts[j].likedPost,
         })
       }
     }

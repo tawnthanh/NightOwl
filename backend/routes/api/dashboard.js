@@ -76,7 +76,7 @@ router.post("/posts/like", asyncHandler(async (req, res) => {
 router.get("/posts/like", asyncHandler(async (req, res) => {
   const likePostObj = await db.Like.findAll({
     include: [db.User],
-    order: [['updatedAt', 'DESC']]
+    order: [['updatedAt', 'DESC']],
   });
 
   res.json(likePostObj)
