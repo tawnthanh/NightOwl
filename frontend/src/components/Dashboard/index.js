@@ -11,12 +11,6 @@ function Dashboard() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(displayAllPosts());
-  //   }, 500)
-  // }, [dispatch]);
-
   useEffect(() => {
     dispatch(displayAllPosts()).then(() => setIsLoaded(true));
   }, [dispatch]);

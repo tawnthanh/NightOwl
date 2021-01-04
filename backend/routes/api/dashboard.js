@@ -34,10 +34,9 @@ router.get("/posts", asyncHandler(async (req , res) => {
     });
 
     const match = likedPostsObj.filter(likedPost => {
-      let postMatch = likedPost.postId === post.id;
-      return postMatch;
+      // return likedPost.userId === post.Post.userId;
+      return likedPost.postId === post.id
     })
-
 
     return {
       id: post.id,
