@@ -26,14 +26,14 @@ function Dashboard() {
 
   return (
   <>
-    { isLoaded && (
+    {/* { isLoaded && ( */}
       <div>
         <div className="spacer"></div>
         { posts.map((post, idx) => {
           return displayPost(post, idx)
         })}
       </div>
-    )}
+    {/* )} */}
 </>
 )
 }
