@@ -59,31 +59,32 @@ function ProfileButton({ user }) {
 
   return (
     <>
+    {showProfile && (
+      <div className="profile-dropdown">
+        Hi, {user.username}
+        <button onClick={logout}>Log Out</button>
+      </div>
+    )}
+    { showMenu && (
+      <div className="menu-dropdown">
+        <button onClick={openNewPost}>New Post</button>
+          <button onClick={() => history.push(`/${user.username}/likes`)}> View Likes </button>
+          <button onClick={() => history.push(`/${user.username}/posts`)}> View Posts </button>
+      </div>
+    )
+
+    }
+    { showModal && (
+      <Modal onClose={() => setShowModal(false)}>
+        <CreatePostNav />
+      </Modal>
+    )}
       <button onClick={openProfile}>
         <i className="fas fa-user-circle" />
       </button>
       <button onClick={openMenu}>
         <i className="fas fa-align-justify"></i>
       </button>
-      {showProfile && (
-        <div className="profile-dropdown">
-          Hi, {user.username}
-          <button onClick={logout}>Log Out</button>
-        </div>
-      )}
-      { showMenu && (
-        <div className="menu-dropdown">
-          <button onClick={openNewPost}>New Post</button>
-          <button onClick={() => history.push(`/${user.username}/likes`)}> View Likes </button>
-        </div>
-      )
-
-      }
-      { showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <CreatePostNav />
-        </Modal>
-      )}
     </>
   );
 }

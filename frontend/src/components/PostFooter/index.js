@@ -1,14 +1,18 @@
 import "./PostFooter.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { setLike } from '../../store/dashboard';
+import { destroyPost } from "../../store/post";
 
 const PostFooter = ({post}) => {
   const sessionUser = useSelector(state => state.session.user)
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [showDiv, setShowDiv] = useState(false);
   let buttonCount = 0;
+
   const openMenu = () => {
     if (showDiv) return;
     setShowDiv(true);
@@ -23,7 +27,9 @@ const PostFooter = ({post}) => {
 
   };
 
-
+  const deletePost = () => {
+    dispatch(destroyPost(post)).then(() => history.push('/dashboard'));
+  }
 
   useEffect(() => {
     if (!showDiv) return;
@@ -41,7 +47,7 @@ const PostFooter = ({post}) => {
     <div className="footer">
       { post.userId === sessionUser.id && (
         <>
-          <button onClick={openMenu}>DELETE</button>
+          <button onClick={deletePost}>DELETE</button>
           <button onClick={openMenu}>EDIT</button>
         </>
       )
@@ -56,9 +62,10 @@ const PostFooter = ({post}) => {
           return <button onClick={likeFeature} className="noLike" key={idx}><i className="fas fa-heart" /></button>
         } else return null;
       })}
-      { post.likedPost.length === 1 && (
+      { post.likedPost.length >= 1 && (
         post.likedPost.map((likePost, idx) => {
-          if (likePost.userId !== sessionUser.id) {
+          if (likePost.userId !== sessionUser.id && buttonCount !== 1) {
+            buttonCount++;
             return <button onClick={likeFeature} className="noLike" key={idx}><i className="fas fa-heart" /></button>
           }
           return null;

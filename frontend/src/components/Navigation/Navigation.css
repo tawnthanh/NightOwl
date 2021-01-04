@@ -62,9 +62,21 @@ a {
   position: relative; */
 }
 
+.menu-dropdown button {
+  border: none;
+}
 
+.menu-dropdown button:hover {
+  border: none;
+  color: red;
+  font-size: 16px;
+  text-shadow: 0px 0px 4px red;
+}
 
-
+.profile-dropdown button:hover {
+  text-shadow: 0px 0px 4px red;
+  color: red;
+}
 @media screen and (min-width: 628px){
   .logged-in-nav{
     width: 628px;

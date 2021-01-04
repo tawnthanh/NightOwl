@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard";
 import owlBackground from "./img/owl5.png";
 import CreatePost from "./components/CreatePost"
 import LikesDisplay from "./components/LikesDisplay";
+import UserPosts from "./components/UserPosts";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,9 +52,16 @@ function App() {
             <Route path="/create-post/video">
               <CreatePost />
             </Route>
-            <Route path={`/${sessionUser.username}/likes`} >
-              <LikesDisplay />
-            </Route>
+            {sessionUser && (
+              <>
+                <Route path={`/${sessionUser.username}/likes`} >
+                  <LikesDisplay />
+                </Route>
+                <Route path={`/${sessionUser.username}/posts`} >
+                  <UserPosts />
+                </Route>
+              </>
+            )}
           </Switch>
         )}
       </div>
