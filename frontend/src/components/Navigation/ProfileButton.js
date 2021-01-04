@@ -61,7 +61,7 @@ function ProfileButton({ user }) {
     <>
     {showProfile && (
       <div className="profile-dropdown">
-        Hi, {user.username}
+        <div className="greeting">Hi, {user.username}</div>
         <button onClick={logout}>Log Out</button>
       </div>
     )}
