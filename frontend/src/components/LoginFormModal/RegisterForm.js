@@ -73,7 +73,7 @@ function SignupFormPage() {
             placeholder="Confirm Password"
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button className="register-submit" type="submit">Sign Up</button>
       </form>
     </>
   );

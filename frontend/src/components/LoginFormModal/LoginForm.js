@@ -52,7 +52,16 @@ function LoginForm() {
             />
           </label>
         </div>
-        <button type="submit">Enter</button>
+        <button className="enter-site" type="submit">Enter</button>
+        <button className="demoUser" onClick={() => {
+           dispatch(sessionActions.login({ credential: 'StephSoo', password: 'password' }))
+           .then( res => history.push("/dashboard"))
+           .catch(
+           (res) => {
+             if (res.data && res.data.errors) setErrors(res.data.errors);
+           }
+         );
+        }}>Demo User</button>
       </form>
     </>
   );
