@@ -64,24 +64,24 @@ const PostFooter = ({post}) => {
       { post.likedPost.map((likePost, idx) => {
         if (likePost.userId === sessionUser.id) {
           buttonCount++;
-          return <button onClick={likeFeature} className="like" key={idx}><i className="fas fa-heart" /></button>
-        } else if (likePost.user !== sessionUser.id && buttonCount === 1 ) {
-
-          return <button onClick={likeFeature} className="noLike" key={idx}><i className="fas fa-heart" /></button>
+          return <button onClick={likeFeature} className={"like"+ " " + buttonCount} key={idx}><i className="fas fa-heart" /></button>
+        } else if (likePost.user !== sessionUser.id && buttonCount > 1 ) {
+          buttonCount++
+          return <button onClick={likeFeature} className={"noLike"+ " " + buttonCount} key={idx}><i className="fas fa-heart" /></button>
         } else return null;
       })}
       { post.likedPost.length >= 1 && (
         post.likedPost.map((likePost, idx) => {
           if (likePost.userId !== sessionUser.id && buttonCount !== 1) {
             buttonCount++;
-            return <button onClick={likeFeature} className="noLike" key={idx}><i className="fas fa-heart" /></button>
+            return <button onClick={likeFeature} className={"noLike"+ " " + buttonCount} key={idx}><i className="fas fa-heart" /></button>
           }
           return null;
         })
 
         )}
       { !post.likedPost.length && (
-        <button onClick={likeFeature} className="noLike"><i className="fas fa-heart" /></button>
+        <button onClick={likeFeature} className={"noLike"+ " " + buttonCount}><i className="fas fa-heart" /></button>
 
       )}
       { showDiv && (
