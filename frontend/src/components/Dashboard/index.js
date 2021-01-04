@@ -11,8 +11,14 @@ function Dashboard() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // useEffect(() => {
+  //   dispatch(displayAllPosts()).then(() => setIsLoaded(true));
+  // }, [dispatch]);
+
   useEffect(() => {
-    dispatch(displayAllPosts()).then(() => setIsLoaded(true));
+    setTimeout(() => {
+      dispatch(displayAllPosts());
+    }, 500)
   }, [dispatch]);
 
   if (!sessionUser) return <Redirect to="/" />;
