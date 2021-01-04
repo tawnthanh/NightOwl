@@ -72,7 +72,12 @@ h2 {
 
 button {
   font-family: 'Inconsolata', monospace;
-  width: 100%
+}
+
+button.enter-site ,
+button.demoUser,
+button.register-submit {
+  width: 100%;
 }
 
 button.enter-site:hover ,
