@@ -8,8 +8,6 @@ const PostFooter = ({post}) => {
   const dispatch = useDispatch();
 
   const [showDiv, setShowDiv] = useState(false);
-  // const [heart, setHeart] = useState(false);
-  // const [buttonCount, setButtonCount] = useState(0)
   let buttonCount = 0;
   const openMenu = () => {
     if (showDiv) return;
