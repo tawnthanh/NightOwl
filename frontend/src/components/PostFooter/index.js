@@ -20,19 +20,7 @@ const PostFooter = ({post}) => {
     const postObj = {
       postId: post.postId,
       userId: sessionUser.id
-    };
-    // let oldLike;
-    // if (document.querySelector('.noLike')) {
-    //   setHeart(true);
-    //   oldLike = document.querySelector('.noLike');
-    //   oldLike.classList.remove('noLike');
-    //   oldLike.classList.add('like');
-    // } else if (document.querySelector('.like')) {
-    //   setHeart(false);
-    //   oldLike = document.querySelector('.like');
-    //   oldLike.classList.remove('like');
-    //   oldLike.classList.add('noLike');
-    // }
+    }
     dispatch(setLike(postObj));
 
   };

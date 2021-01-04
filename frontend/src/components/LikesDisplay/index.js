@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { displayAllLikes } from '../../store/dashboard';
 import { useEffect } from "react";
-import displayLikes from './displayLikes';
+import AudioDisplayLike from './AudioDisplayLike';
 
 const LikesDisplay = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -23,7 +23,7 @@ const LikesDisplay = () => {
     <div>
       <div className="spacer"></div>
       { posts.map((post, idx) => {
-        if ( sessionUser.id === post.userId && post.postType[0] === "video") return <div key={idx} className={"likes-post" +" "+ post.id}>Hi Video</div>
+        if ( sessionUser.id === post.userId && post.postType[0] === "video") return <AudioDisplayLike post={post} />
         if( sessionUser.id === post.userId && post.postType[0] === "audio") return <div key={idx} className={"likes-post" +" "+ post.id}>hi Audio</div>
       })}
   </div>
