@@ -6,8 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     likeStatus: DataTypes.BOOLEAN,
   }, {});
   Like.associate = function(models) {
-    Like.belongsTo(models.Post, { foreignKey: 'postId' });
-    Like.belongsTo(models.User, { foreignKey: 'userId' });
 
   };
   return Like;
