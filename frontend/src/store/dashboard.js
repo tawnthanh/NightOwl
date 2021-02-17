@@ -21,8 +21,8 @@ const toggleLike = (singlePost) => ({
 });
 
 //THUNK
-export const displayAllPosts = () => async (dispatch) => {
-  const res = await fetch('/api/dashboard/posts');
+export const displayAllPosts = (userId) => async (dispatch) => {
+  const res = await fetch(`/api/dashboard/posts/${userId}`);
   const posts = res.data;
   dispatch(setAllPosts(posts));
 }

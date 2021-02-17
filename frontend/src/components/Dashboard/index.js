@@ -11,13 +11,9 @@ function Dashboard() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   dispatch(displayAllPosts()).then(() => setIsLoaded(true));
-  // }, [dispatch]);
-
   useEffect(() => {
     setTimeout(() => {
-      dispatch(displayAllPosts());
+      dispatch(displayAllPosts(sessionUser.id));
     }, 500)
   }, [dispatch]);
 
