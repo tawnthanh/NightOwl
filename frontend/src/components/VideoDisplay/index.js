@@ -1,7 +1,7 @@
 import profilePic from "../../img/profile-pic.png";
 import PostFooter from "../PostFooter";
 
-const VideoDisplay = ({post}) => {
+const VideoDisplay = ({post, user}) => {
     return (
       <div className="post-container " id={post.id}>
         <img src={profilePic} alt="profile-default" className="picture-box"/>
@@ -15,7 +15,7 @@ const VideoDisplay = ({post}) => {
             {post.description}
           </div>
           <div>
-            <PostFooter post={post} />
+            <PostFooter post={post} user={user}/>
           </div>
         </div>
       </div>

@@ -26,13 +26,13 @@ function Dashboard() {
       <div>
         <div className="spacer"></div>
         { posts.map((post, idx) => {
-          if (post.PostType.type === "text") return <TextDisplay key={idx} post={post} />;
+          if (post.PostType.type === "text") return <TextDisplay key={idx} post={post} user={sessionUser} />;
 
-          else if (post.PostType.type === "photo") return <PhotoDisplay key={idx} post={post}/>;
+          else if (post.PostType.type === "photo") return <PhotoDisplay key={idx} post={post} user={sessionUser}/>;
 
-          else if (post.PostType.type === "audio") return <AudioDisplay key={idx} post={post}/>;
+          else if (post.PostType.type === "audio") return <AudioDisplay key={idx} post={post} user={sessionUser}/>;
 
-          else if (post.PostType.type === "video") return <VideoDisplay key={idx} post={post}/>;
+          else if (post.PostType.type === "video") return <VideoDisplay key={idx} post={post} user={sessionUser}/>;
         })}
       </div>
     )}
