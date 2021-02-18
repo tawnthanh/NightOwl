@@ -21,7 +21,6 @@ router.get("/posts/:userId", asyncHandler(async (req, res) => {
 
 router.post("/posts/like", asyncHandler(async (req, res) => {
   const { id, userId, likeStatus } = req.body;
-  console.log(likeStatus)
   const userLikedPost = await Like.findOne({
     where: { userId, "postId": id },
   })

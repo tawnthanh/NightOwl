@@ -9,10 +9,10 @@ const VideoDisplay = ({post, user}) => {
           { post.title && (
             <h1>{post.title}</h1>
           )}
-          <iframe title={post.id} src={post.src} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <iframe title={post.id} src={post.PostContents[0].src} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <div>
-            <h3>{post.username}:</h3>
-            {post.description}
+            <h3>{post.User.username}:</h3>
+            {post.PostContents[0].description}
           </div>
           <div>
             <PostFooter post={post} user={user}/>

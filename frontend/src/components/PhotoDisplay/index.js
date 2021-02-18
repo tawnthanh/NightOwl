@@ -10,10 +10,10 @@ const PhotoDisplay = ({post, user}) => {
         { post.title && (
             <h1>{post.title}</h1>
         )}
-        <img src={post.src} alt={post.title} />
+        <img src={post.PostContents[0].src} alt={post.title} />
         <div className="details">
-          <h3>{post.username}: </h3>
-          {post.description}
+          <h3>{post.User.username}: </h3>
+          {post.PostContents[0].description}
         </div>
         <div>
           <PostFooter post={post} user={user}/>
