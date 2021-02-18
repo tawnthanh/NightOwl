@@ -20,16 +20,16 @@ router.get("/posts/:userId", asyncHandler(async (req, res) => {
 }));
 
 router.post("/posts/like", asyncHandler(async (req, res) => {
-  const { postId, userId } = req.body;
-//
+  const { id, userId, likeStatus } = req.body;
+  console.log(likeStatus)
   const userLikedPost = await Like.findOne({
-    where: { userId, postId },
+    where: { userId, "postId": id },
   })
 
   if (userLikedPost) {
-    await userLikedPost.destroy();
+    await userLikedPost.update({"likeStatus": likeStatus});
   } else {
-    await Like.create({ postId, userId })
+    await Like.create({ "postId": id, userId })
   }
 
 }));

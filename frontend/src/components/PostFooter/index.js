@@ -10,11 +10,15 @@ const PostFooter = ({ post, user }) => {
   const history = useHistory();
 
   const [showDiv, setShowDiv] = useState(false);
-  const [like, setLike] = useState(false);
+  const [like, setLikeButton] = useState(false);
 
   useEffect(() => {
-    if(Object.values(post.Likes)[0]) setLike(true)
-  })
+    if (Object.values(post.Likes)[0]) setLikeButton(true);
+  }, [post]);
+
+  useEffect(() => {
+    dispatch(setLike({...post, "likeStatus": like}))
+  }, [like]);
 
   const openMenu = () => {
     if (showDiv) return;
@@ -24,8 +28,8 @@ const PostFooter = ({ post, user }) => {
 
   const deletePost = () => {
     dispatch(destroyPost(post))
-    setTimeout(()=>{history.push('/')}, 500)
-  }
+    setTimeout(() => { history.push('/') }, 500)
+  };
 
   useEffect(() => {
     if (!showDiv) return;
@@ -50,7 +54,7 @@ const PostFooter = ({ post, user }) => {
 
       }
       <button onClick={openMenu}>REBLOG</button>
-      <button onClick={() => console.log(Object.values(post.Likes)[0].likeStatus)} className={like? "like": "noLike"}><i className="fas fa-heart" /></button>
+      <button onClick={() => setLikeButton(!like)} className={like? "like": "noLike"}><i className="fas fa-heart" /></button>
       { showDiv && (
         <div className="like-dropdown">
           Coming Soon!

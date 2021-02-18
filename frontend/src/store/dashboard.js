@@ -58,22 +58,27 @@ export const displayAllLikes = () => async (dispatch) => {
 }
 
 export const setLike = (post) => async (dispatch) => {
-await fetch('/api/dashboard/posts/like', {
+  console.log("thunk action", post)
+
+  await fetch('/api/dashboard/posts/like', {
     method: 'POST',
     body: JSON.stringify(post)
-  })
-  dispatch(toggleLike(post))
+  });
+  // dispatch(toggleLike(post));
 }
 
 //REDUCER
 const reducer = (state = [], action) => {
+  let newState;
   switch (action.type) {
     case DISPLAY_POSTS:
-      return action.posts;
+      newState = [...action.posts]
+      return newState;
     case DISPLAY_LIKES:
-      return action.posts;
-    case TOGGLE_LIKE:
-      return action;
+      newState = [...action.posts]
+      return newState;
+    // case TOGGLE_LIKE:
+    //   return state;
     default:
       return state;
   }
