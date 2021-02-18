@@ -9,6 +9,7 @@ router.get("/posts/:userId", asyncHandler(async (req, res) => {
   const userId = req.params.userId;
 
   const posts = await Post.findAll({
+    order: [['updatedAt', 'DESC']],
     include: [{
       model: Like,
       where: { "userId": parseInt(userId) },
@@ -34,13 +35,18 @@ router.post("/posts/like", asyncHandler(async (req, res) => {
 }));
 
 
-router.get("/posts/like", asyncHandler(async (req, res) => {
-  const likePostObj = await Like.findAll({
-    include: [db.User],
-    order: [['updatedAt', 'DESC']],
+router.get("/posts/like/:userId", asyncHandler(async (req, res) => {
+  const userId = req.params.userId;
+
+  const posts = await Post.findAll({
+    order: [['createdAt', 'DESC']],
+    include: [{
+      model: Like,
+      where: { "userId": parseInt(userId), "likeStatus": true },
+    }, PostContent, PostType, User ]
   });
 
-  res.json(likePostObj)
+  return res.json(posts)
 }))
 
 router.get("/:user/posts", asyncHandler(async (req, res) => {

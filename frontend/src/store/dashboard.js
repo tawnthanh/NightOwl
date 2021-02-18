@@ -23,38 +23,15 @@ const toggleLike = (singlePost) => ({
 //THUNK
 export const displayAllPosts = (userId) => async (dispatch) => {
   const res = await fetch(`/api/dashboard/posts/${userId}`);
-  const posts = res.data;
+  const posts = await res.data;
   dispatch(setAllPosts(posts));
 }
 
-export const displayAllLikes = () => async (dispatch) => {
-  const allPostRes = await fetch('/api/dashboard/posts');
-  const posts = allPostRes.data;
-
-  const allLikesRes = await fetch('/api/dashboard/posts/like');
-  const likes = allLikesRes.data;
-
-  let likePost = [];
-
-  for (let i = 0; i < likes.length; i++){
-    for (let j = 0; j < posts.length; j++){
-      if (likes[i].postId === posts[j].id) {
-        likePost.push({
-          ...likes[i],
-          User: likes[i].User,
-          userId: posts[j].userId,
-          postType: posts[j].postType,
-          title: posts[j].title,
-          description: posts[j].description,
-          src: posts[j].src,
-          originalUser: posts[j].username,
-          likedPost: posts[j].likedPost,
-        })
-      }
-    }
-  }
-
-  return dispatch(setAllLikes([...likePost]));
+export const displayAllLikes = (userId) => async (dispatch) => {
+  const res = await fetch(`/api/dashboard/posts/like/${userId}`);
+  const posts = await res.data;
+  console.log(res.data)
+  return dispatch(setAllLikes(posts));
 }
 
 export const setLike = (post) => async (dispatch) => {
