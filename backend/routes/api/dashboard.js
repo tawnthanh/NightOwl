@@ -13,7 +13,7 @@ router.get("/posts/:userId", asyncHandler(async (req, res) => {
       model: Like,
       where: { "userId": parseInt(userId) },
       required: false,
-    }, PostContent, PostType]
+    }, PostContent, PostType, User]
   });
 
   return res.json(posts)

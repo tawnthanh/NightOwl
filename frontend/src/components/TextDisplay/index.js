@@ -11,9 +11,9 @@ const TextDisplay = ({post, user}) => {
         )}
         <div className="details">
           <h3>
-            {post.username}:
+            {post.User.username}:
           </h3>
-          {post.description}
+          {post.PostContents[0].description}
         </div>
         <div>
           <PostFooter post={post} user={user}/>
