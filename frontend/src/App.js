@@ -26,43 +26,38 @@ function App() {
       <div className="home-container">
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
-          <Switch>
-            <Route exact path="/">
-              <img src={owlBackground} alt="owl" className="background-img" />
-              {sessionUser && (
-                <Redirect to="/dashboard" />
-              )}
-            </Route>
-            <Route path="/register">
-              <img src={owlBackground} alt="owl" className="background-img"/>
-              <SignupFormPage />
-            </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-            </Route>
-            <Route path="/create-post/text">
-              <CreatePost />
-            </Route>
-            <Route path="/create-post/photo">
-              <CreatePost />
-            </Route>
-            <Route path="/create-post/audio">
-              <CreatePost />
-            </Route>
-            <Route path="/create-post/video">
-              <CreatePost />
-            </Route>
-            {sessionUser && (
-              <>
-                <Route path={`/${sessionUser.username}/likes`} >
-                  <LikesDisplay />
-                </Route>
-                <Route path={`/${sessionUser.username}/posts`} >
-                  <UserPosts />
-                </Route>
-              </>
-            )}
-          </Switch>
+          <>
+            <Switch>
+              <Route exact path="/">
+                <img src={owlBackground} alt="owl" className="background-img" />
+                {sessionUser && (
+                  <Redirect to="/dashboard" />
+                )}
+              </Route>
+              <Route path="/register">
+                <img src={owlBackground} alt="owl" className="background-img"/>
+                <SignupFormPage />
+              </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+              </Route>
+              <Route path="/create-post/text">
+                <CreatePost />
+              </Route>
+              <Route path="/create-post/photo">
+                <CreatePost />
+              </Route>
+              <Route path="/create-post/audio">
+                <CreatePost />
+              </Route>
+              <Route path="/create-post/video">
+                <CreatePost />
+              </Route>
+              <Route path={`/${sessionUser.username}/likes`} render={() => <LikesDisplay />} />
+              <Route path={`/${sessionUser.username}/posts`} render={()=> <UserPosts />} />
+            </Switch>
+            
+          </>
         )}
       </div>
     </>
