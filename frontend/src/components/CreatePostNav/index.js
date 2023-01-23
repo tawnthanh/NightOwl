@@ -1,33 +1,26 @@
+import { Link } from "react-router-dom";
 import "./CreatePostNav.css";
 
 const CreatePostNav = () => {
 
   return (
     <div className="create-a-post">
-      <div className="text-nav">
-        < a href="/create-post/text">
+        <Link to="/create-post/text" className="text-nav">
           <i className="fas fa-text-height"></i>
           <div>Text</div>
-        </a>
-      </div>
-      <div className="photo-nav">
-        <a href="/create-post/photo">
+        </Link>
+        <Link to="/create-post/photo" className="photo-nav">
           <i className="fas fa-image"></i>
           <div>Photo</div>
-        </a>
-      </div>
-      <div className="video-nav">
-        <a href="/create-post/video">
+        </Link>
+        <Link to="/create-post/video" className="video-nav">
           <i className="fab fa-youtube"></i>
           <div>Video</div>
-        </a>
-      </div>
-      <div className="audio-nav">
-        <a href="/create-post/audio">
+        </Link>    
+        <Link to="/create-post/audio" className="audio-nav">
           <i className="fas fa-volume-up"></i>
           <div>Audio</div>
-        </a>
-      </div>
+        </Link>
     </div>
   )
 }

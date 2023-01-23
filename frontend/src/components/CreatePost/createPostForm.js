@@ -16,11 +16,7 @@ const CreatePostForm = () => {
         <PhotoForm />
         )
       }
-      { postType === "audio" && (
-        <VidAudForm />
-        )
-      }
-      {  postType === "video" && (
+      { (postType === "audio" || postType === "video") && (
         <VidAudForm />
         )
       }
