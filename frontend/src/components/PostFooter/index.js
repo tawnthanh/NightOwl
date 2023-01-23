@@ -13,7 +13,7 @@ const PostFooter = ({ post, user }) => {
   const [like, setLikeButton] = useState(false);
 
   useEffect(() => {
-    if (Object.values(post.Likes)[0]) setLikeButton(true);
+    setLikeButton(post.likeStatus);
   }, [post]);
 
   useEffect(() => {

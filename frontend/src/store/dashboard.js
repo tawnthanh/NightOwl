@@ -30,7 +30,6 @@ export const displayAllPosts = (userId) => async (dispatch) => {
 export const displayAllLikes = (userId) => async (dispatch) => {
   const res = await fetch(`/api/dashboard/posts/like/${userId}`);
   const posts = await res.data;
-  console.log(res.data)
   return dispatch(setAllLikes(posts));
 }
 
@@ -47,7 +46,10 @@ const reducer = (state = [], action) => {
   let newState;
   switch (action.type) {
     case DISPLAY_POSTS:
-      newState = [...action.posts]
+      newState = {}
+      Object.values(action.posts).map(post => {
+        newState[post.id] = {...post, likeStatus: post.Likes.length? true: false}
+      });
       return newState;
     case DISPLAY_LIKES:
       newState = [...action.posts]

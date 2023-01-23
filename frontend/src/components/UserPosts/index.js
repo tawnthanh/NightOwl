@@ -17,8 +17,6 @@ const UserPosts = () => {
     dispatch(displayAllPosts()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-
-  console.log(posts)
   if (!sessionUser) return <Redirect to="/" />;
 
   return (

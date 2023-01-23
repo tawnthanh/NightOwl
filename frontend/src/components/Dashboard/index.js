@@ -25,7 +25,7 @@ function Dashboard() {
     { isLoaded && (
       <>
         <div className="spacer"></div>
-        { posts.map((post, idx) => {
+        { Object.values(posts).map((post, idx) => {
           if (post.PostType.type === "text") return <TextDisplay key={idx} post={post} user={sessionUser} />;
 
           else if (post.PostType.type === "photo") return <PhotoDisplay key={idx} post={post} user={sessionUser}/>;
