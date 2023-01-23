@@ -23,7 +23,7 @@ function Dashboard() {
   else return (
   <>
     { isLoaded && (
-      <div>
+      <>
         <div className="spacer"></div>
         { posts.map((post, idx) => {
           if (post.PostType.type === "text") return <TextDisplay key={idx} post={post} user={sessionUser} />;
@@ -34,7 +34,7 @@ function Dashboard() {
 
           else if (post.PostType.type === "video") return <VideoDisplay key={idx} post={post} user={sessionUser}/>;
         })}
-      </div>
+      </>
     )}
 </>
 )

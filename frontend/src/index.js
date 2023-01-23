@@ -26,19 +26,12 @@ if (process.env.NODE_ENV !== "production") {
   window.postReducer = postReducer;
 }
 
-// const Carrot = () => (
-//   <div style={{ color: "orange", fontSize: "100px" }}>
-//     <i className="fas fa-carrot"></i>
-//   </div>
-// );
-
 function Root() {
   return (
     <Provider store={store}>
       <ModalProvider>
         <BrowserRouter>
           <App />
-          {/* <Carrot /> */}
         </BrowserRouter>
       </ModalProvider>
     </Provider>

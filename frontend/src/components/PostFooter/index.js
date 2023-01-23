@@ -21,8 +21,7 @@ const PostFooter = ({ post, user }) => {
   }, [like]);
 
   const openMenu = () => {
-    if (showDiv) return;
-    setShowDiv(true);
+    showDiv? setShowDiv(!showDiv): setShowDiv(true);
   };
 
 
@@ -30,18 +29,6 @@ const PostFooter = ({ post, user }) => {
     dispatch(destroyPost(post))
     setTimeout(() => { history.push('/') }, 500)
   };
-
-  useEffect(() => {
-    if (!showDiv) return;
-
-    const closeMenu = () => {
-      setShowDiv(false);
-    };
-
-    document.addEventListener('click', closeMenu);
-
-    return () => document.removeEventListener("click", closeMenu);
-  }, [showDiv]);
 
   return (
     <div className="footer">
